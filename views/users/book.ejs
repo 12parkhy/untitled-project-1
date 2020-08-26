@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+    <div class="row">
+        <div class="col-md-6" style="text-align: center; margin-top: 2.5rem;">
+            <img width="150" height="250" src="<%= book.coverImageSrc %>">
+        </div>
+        <div class="col-md-6" style="margin-top: 2.5rem;">
+            <h2>
+                <%= book.title %>
+            </h2>
+            <div>Author:
+                <%= book.author %>
+            </div>
+            <div>Published Date:
+                <%= book.publishedDate.toDateString() %>
+            </div>
+            <div>Page Count:
+                <%= book.pageCount %>
+            </div>
+            <div>Description:
+                <%= book.description %>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+    <div class="row" style="margin-bottom: 2.5rem;">
+        <div class="col-md-6" style="text-align: center; margin-top: 2.5rem;">
+            <img width="150" height="250" src="<%= book.coverImageSrc %>">
+            <div class="row justify-content-center" style="margin-top: 1rem;">
+                <a href="/books/<%= book.id %>/edit" class="btn btn-primary" style="margin-right: 1rem;">Edit</a>
+                <form action="/books/<%= book.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 2.5rem;">
+            <h2>
+                <%= book.title %>
+            </h2>
+            <div>Author:
+                <%= book.author %>
+            </div>
+            <div>Published Date:
+                <%= book.publishedDate.toDateString() %>
+            </div>
+            <div>Page Count:
+                <%= book.pageCount %>
+            </div>
+            <div>Description:
+                <%= book.description %>
+            </div>
+        </div>
+    </div>

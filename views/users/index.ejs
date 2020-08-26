@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/messages') %>
+        <h2 style="margin-top: 2.5rem">New Books In J Library</h2>
+        <div class="row">
+            <% books.forEach((book) => { %>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <a href="/users/searchbooks/<%= book.id %>">
+                <img height="150" width="100" src="<%= book.coverImageSrc %>">
+            </a>
+                        <a href="/users/searchbooks/<%= book.id %>" style="text-decoration: none;">
+                            <p class="card-text" style="margin-top: 0.5rem; margin-bottom: 0.5rem; color: black;">
+                                <%= book.title%>
+                            </p>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><%= book.description.substring(0, 200) + '...'  %></small>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
