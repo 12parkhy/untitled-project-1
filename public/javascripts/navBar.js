@@ -6,13 +6,17 @@ document.addEventListener('click', (event) => {
     }
 })
 let navbarTogglerIcon = document.querySelector('.navbar-toggler-icon')
-navbarTogglerIcon.addEventListener('click', (event) => {
-    if (!document.querySelector("#navbarNav").classList.contains('show')) {
-        document.querySelector("#navbarNav").classList.add("show")
-    } else if (document.querySelector("#navbarNav").classList.contains('show')) {
-        document.querySelector("#navbarNav").classList.remove('show')
+let navbarTogglerButton = document.querySelector('.navbar-toggler')
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('navbar-toggler-icon') || event.target.classList.contains('navbar-toggler')) {
+        if (!document.querySelector("#navbarNav").classList.contains('show')) {
+            document.querySelector("#navbarNav").classList.add("show")
+        } else if (document.querySelector("#navbarNav").classList.contains('show')) {
+            document.querySelector("#navbarNav").classList.remove('show')
+        }
     }
 })
+
 let navbarDropdownInfo = document.querySelector('#navbarDropdownInfo')
 navbarDropdownInfo.addEventListener('click', (event) => {
     if (document.querySelector("#dropdown-info-menu").classList.contains('show')) {
