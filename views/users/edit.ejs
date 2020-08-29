@@ -6,25 +6,25 @@
             <form action="/users/<%= user.id %>?_method=PUT" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" 
-                    value="<%= user.name %>">
+                    <input type="text" class="form-control" id="name" name="name" value="<%= user.name %>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" 
-                    value="<%= user.email %>" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>"
+                        aria-describedby="emailHelp">
                     <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="telephoneNumb">Telephone Number</label>
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="telephoneNumb" name="telephoneNumb"
-                        value="<%= user.telephoneNumb %>" aria-describedby="telephoneNumbHelp">
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="telephoneNumb"
+                        name="telephoneNumb" value="<%= user.telephoneNumb %>" aria-describedby="telephoneNumbHelp">
                     <small id="telephoneNumbHelp" class="form-text text-muted">ex) 000-000-0000</small>
                 </div>
                 <div class="form-group">
                     <label for="password">New Password</label>
                     <input type="password" class="form-control" id="password" name="password">
-                    <small id="passwordHelp" class="form-text text-muted">Password Should Be At Least 8 Characters Long</small>
+                    <small id="passwordHelp" class="form-text text-muted">Password Should Be At Least 8 Characters
+                        Long</small>
                 </div>
                 <div class="form-group">
                     <label for="confirmPassword">Confirm New Password</label>

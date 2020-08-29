@@ -1,34 +1,37 @@
 <%- include('../partials/header') %>
-    <%- include('../partials/messages') %>
-        <div class="row" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
-            <div class="col">
-                <form action="/books" method="POST">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title" id="title" value="<%= book.title %>">
-                    </div>
-                    <div class="form-group">
-                        <label for="author">Author</label>
-                        <input type="text" class="form-control" name="author" id="author" value="<%= book.author %>">
-                    </div>
-                    <div class="form-group">
-                        <label for="publishedDate">Published Date</label>
-                        <input type="date" class="form-control" name="publishedDate" id="publishedDate" value="<%= book.publishedDate == null || book.publishedDate == '' ? '' : book.publishedDate.toISOString().split('T')[0] %>">
-                    </div>
-                    <div class="form-group">
-                        <label for="pageCount">Page Count</label>
-                        <input type="number" class="form-control" min="1" name="pageCount" id="pageCount" value="<%= book.pageCount %>">
-                    </div>
-                    <div class="form-group">
-                        <label for="coverImage">Cover Image</label>
-                        <input type="file" class="form-control filepond" name="coverImage" id="coverImage">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="5"><%= book.description %></textarea>
-                    </div>
-                    <a href="/books" class="btn btn-primary">Cancel</a>
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </form>
+<%- include('../partials/messages') %>
+<div class="row" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
+    <div class="col">
+        <form action="/books" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" id="title" value="<%= book.title %>">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" name="author" id="author" value="<%= book.author %>">
+            </div>
+            <div class="form-group">
+                <label for="publishedDate">Published Date</label>
+                <input type="date" class="form-control" name="publishedDate" id="publishedDate"
+                    value="<%= book.publishedDate == null || book.publishedDate == '' ? '' : book.publishedDate.toISOString().split('T')[0] %>">
+            </div>
+            <div class="form-group">
+                <label for="pageCount">Page Count</label>
+                <input type="number" class="form-control" min="1" name="pageCount" id="pageCount"
+                    value="<%= book.pageCount %>">
+            </div>
+            <div class="form-group">
+                <label for="coverImage">Cover Image</label>
+                <input type="file" class="form-control filepond" name="coverImage" id="coverImage">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" name="description" id="description"
+                    rows="5"><%= book.description %></textarea>
+            </div>
+            <a href="/books" class="btn btn-primary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>

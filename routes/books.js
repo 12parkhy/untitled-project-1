@@ -10,7 +10,7 @@ if (process.env.NODE_ENV != 'production') {
 
 const admin = process.env.ADMIN
 
-router.get('/', adminAuthenticated, async(req, res) => {
+router.get('/', adminAuthenticated, async (req, res) => {
     let query = Book.find()
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
@@ -38,7 +38,7 @@ router.get('/', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.get('/add', adminAuthenticated, async(req, res) => {
+router.get('/add', adminAuthenticated, async (req, res) => {
     try {
         const book = new Book()
         res.render(`books/form`, {
@@ -53,7 +53,7 @@ router.get('/add', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.post('/', adminAuthenticated, async(req, res) => {
+router.post('/', adminAuthenticated, async (req, res) => {
     let errors = []
     const book = new Book({
         title: req.body.title,
@@ -95,7 +95,7 @@ router.post('/', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.get('/:id', adminAuthenticated, async(req, res) => {
+router.get('/:id', adminAuthenticated, async (req, res) => {
     try {
         const book = await Book.findById(req.params.id)
         res.render('books/book', { user: req.user, book: book, admin })
@@ -105,7 +105,7 @@ router.get('/:id', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.get('/:id/edit', adminAuthenticated, async(req, res) => {
+router.get('/:id/edit', adminAuthenticated, async (req, res) => {
     try {
         const book = await Book.findById(req.params.id)
         res.render(`books/edit`, {
@@ -119,7 +119,7 @@ router.get('/:id/edit', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.put('/:id', adminAuthenticated, async(req, res) => {
+router.put('/:id', adminAuthenticated, async (req, res) => {
     let book
     try {
         let errors = []
@@ -164,7 +164,7 @@ router.put('/:id', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.delete('/:id', adminAuthenticated, async(req, res) => {
+router.delete('/:id', adminAuthenticated, async (req, res) => {
     let book
     try {
         book = await Book.findById(req.params.id)

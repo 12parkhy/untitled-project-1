@@ -12,7 +12,7 @@ if (process.env.NODE_ENV != 'production') {
 
 const admin = process.env.ADMIN
 
-router.get('/', authenticated, async(req, res) => {
+router.get('/', authenticated, async (req, res) => {
     let books
     try {
         books = await Book.find().sort({ addedDate: 'desc' }).limit(9).exec()
@@ -47,7 +47,7 @@ router.get('/signup', notAuthenticated, (req, res) => {
     res.render('users/signup')
 })
 
-router.post('/signup', notAuthenticated, async(req, res) => {
+router.post('/signup', notAuthenticated, async (req, res) => {
     try {
         let errors = []
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
@@ -103,7 +103,7 @@ router.post('/signup', notAuthenticated, async(req, res) => {
     }
 })
 
-router.get('/searchbooks', authenticated, async(req, res) => {
+router.get('/searchbooks', authenticated, async (req, res) => {
     let query = Book.find()
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
@@ -131,7 +131,7 @@ router.get('/searchbooks', authenticated, async(req, res) => {
     }
 })
 
-router.get('/searchbooks/:id', authenticated, async(req, res) => {
+router.get('/searchbooks/:id', authenticated, async (req, res) => {
     try {
         const book = await Book.findById(req.params.id)
         res.render('users/book', {
@@ -149,7 +149,7 @@ router.get('/status', authenticated, (req, res) => {
     res.render('users/status', { user: req.user, admin })
 })
 
-router.get('/:id', authenticated, async(req, res) => {
+router.get('/:id', authenticated, async (req, res) => {
     try {
         const user = await User.findById(req.params.id)
         res.render('users/profile', { user: user, admin })
@@ -159,7 +159,7 @@ router.get('/:id', authenticated, async(req, res) => {
     }
 })
 
-router.get('/:id/edit', authenticated, async(req, res) => {
+router.get('/:id/edit', authenticated, async (req, res) => {
     try {
         const user = await User.findById(req.params.id)
         res.render('users/edit', { user: user, admin })
@@ -169,7 +169,7 @@ router.get('/:id/edit', authenticated, async(req, res) => {
     }
 })
 
-router.put('/:id', authenticated, async(req, res) => {
+router.put('/:id', authenticated, async (req, res) => {
     let user
     try {
         let errors = []

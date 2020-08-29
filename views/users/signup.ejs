@@ -1,37 +1,42 @@
 <%- include('../partials/messages') %>
-    <div class="row" style="margin-top: 5rem; margin-bottom: 5rem">
-        <div class="col-md-6 m-auto">
-            <div class="card card-body">
-                <h1>Sign Up</h1>
-                <form action="/users/signup" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" value="<%= typeof name != 'undefined' ? name : '' %>" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-muted"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="telephoneNumb">Telephone Number</label>
-                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="telephoneNumb" name="telephoneNumb" value="<%= typeof telephoneNumb != 'undefined' ? telephoneNumb : '' %>" aria-describedby="telephoneNumbHelp">
-                        <small id="telephoneNumbHelp" class="form-text text-muted">ex) 000-000-0000</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
-                        <small id="passwordNumbHelp" class="form-text text-muted">Password Should Be At Least 8 Characters Long</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
-                </form>
-                <p class="lead mt-3">
-                    Have An Account?<a href="/users/login"> Log In</a>
-                </p>
-            </div>
+<div class="row" style="margin-top: 5rem; margin-bottom: 5rem">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1>Sign Up</h1>
+            <form action="/users/signup" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        value="<%= typeof email != 'undefined' ? email : '' %>" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="telephoneNumb">Telephone Number</label>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="telephoneNumb"
+                        name="telephoneNumb" value="<%= typeof telephoneNumb != 'undefined' ? telephoneNumb : '' %>"
+                        aria-describedby="telephoneNumbHelp">
+                    <small id="telephoneNumbHelp" class="form-text text-muted">ex) 000-000-0000</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    <small id="passwordNumbHelp" class="form-text text-muted">Password Should Be At Least 8 Characters
+                        Long</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p class="lead mt-3">
+                Have An Account?<a href="/users/login"> Log In</a>
+            </p>
         </div>
     </div>
+</div>

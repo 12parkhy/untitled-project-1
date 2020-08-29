@@ -10,7 +10,7 @@ if (process.env.NODE_ENV != 'production') {
 
 const admin = process.env.ADMIN
 
-router.get('/', adminAuthenticated, async(req, res) => {
+router.get('/', adminAuthenticated, async (req, res) => {
     let query = User.find()
     if (req.query.name != null && req.query.name != '') {
         query = query.regex('name', new RegExp(req.query.name, 'i'))
@@ -42,11 +42,11 @@ router.get('/', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.get('/:id', adminAuthenticated, async(req, res) => {
+router.get('/:id', adminAuthenticated, async (req, res) => {
     res.send('Unavailable For Now')
 })
 
-router.get('/:id/edit', adminAuthenticated, async(req, res) => {
+router.get('/:id/edit', adminAuthenticated, async (req, res) => {
     try {
         let user = req.user
         let nonAdmin = await User.findById(req.params.id)
@@ -61,7 +61,7 @@ router.get('/:id/edit', adminAuthenticated, async(req, res) => {
     }
 })
 
-router.put('/:id', adminAuthenticated, async(req, res) => {
+router.put('/:id', adminAuthenticated, async (req, res) => {
     let nonAdmin
     let user = req.user
     try {
