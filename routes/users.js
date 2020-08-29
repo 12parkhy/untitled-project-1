@@ -40,7 +40,7 @@ router.post('/login', notAuthenticated, passport.authenticate('local', {
 router.delete('/logout', authenticated, (req, res) => {
     req.logOut()
     req.flash('logout', 'You Are Logged Out')
-    res.redirect('/users/login')
+    res.redirect('/')
 })
 
 router.get('/signup', notAuthenticated, (req, res) => {
